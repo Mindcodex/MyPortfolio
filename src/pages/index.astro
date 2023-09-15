@@ -1,0 +1,54 @@
+---
+import Animate from '../components/Animate.svelte';
+import Navbar from '../components/Navbar.astro';
+import App from '../layouts/App.astro';
+import Elipse1 from '../assets/Ellipse-21.svg';
+import Elipse2 from '../assets/Ellipse-22.svg';
+import img1  from '../assets/Rectangle 16.jpg';
+import img2  from '../assets/Rectangle 16.png';
+import Layout from '../layouts/Layout.astro';
+import Projects from '../layouts/Projects.astro'
+import ProjectCard from '../components/ProjectCard.astro'
+import AboutContent from '../components/AboutContent.svelte'
+---
+
+<App>
+  <article
+    class="w-full px-[15px] sm:px-[30px] h-screen absolute rounded-r-lg pt-8 overflow-hidden backdrop-blur-[120px] bg-blue-300/30 z-10"
+    id="seccion1"
+  >
+    <Animate client:only />
+  </article>
+  <div
+    class="w-full h-screen bg-neutral-900 z-10 flex justify-center absolute items-center pt-8 overflow-hidden flex-col"
+    id="seccion2"
+  >
+    <div class="flex items-center justify-center rotate-90 sm:rotate-0" id="elipses">
+      <div class="flex justify-center relative items-center ">
+        <img class="relative left-[30px]" src={Elipse1.src} alt="" />
+        <div
+          class="text-center text-white text-2xl font-bold font-['Lexend'] absolute w-full left-[30px] -rotate-90 sm:rotate-0"
+        >
+          Design
+        </div>
+      </div>
+      <div class="relative flex justify-center items-center">
+        <img class="relative right-[30px] " src={Elipse2.src} alt="" />
+        <div
+          class="text-center text-white sm:text-2xl text-xl font-bold font-['Lexend'] absolute w-full right-[30px] overflow-hidden -rotate-90 sm:rotate-0"
+        >
+          Development
+        </div>
+      </div>
+    </div>
+    <div class="text-[#a7bbc9] text-6xl font-['Lexend'] font-black" id="aboutme">About Me</div>
+    <AboutContent/>
+  </div>
+  <Layout>
+    <Projects>
+      <ProjectCard slot='left' id='1' color="600" imgSource={img1.src}/>
+      <ProjectCard slot='right' id="2" color="700" imgSource={img2.src}/>
+      
+    </Projects>
+  </Layout>
+</App>

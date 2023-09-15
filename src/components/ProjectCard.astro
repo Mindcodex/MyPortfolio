@@ -1,0 +1,6 @@
+---
+let { id, color, imgSource, link } = Astro.props
+---
+<a href={link}>
+  <img class={`w-full sm:w-[545px] h-[600px] rounded-md bg-neutral-600`} src={imgSource}  id={`project-card-${id}`}/>
+</a>
