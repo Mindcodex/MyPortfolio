@@ -4,8 +4,8 @@ import Navbar from '../components/Navbar.astro';
 import App from '../layouts/App.astro';
 import Elipse1 from '../assets/Ellipse-21.svg';
 import Elipse2 from '../assets/Ellipse-22.svg';
-import img1  from '../assets/Rectangle 16.jpg';
-import img2  from '../assets/Rectangle 16.png';
+import img1  from '../assets/portfolio.png';
+import img2  from '../assets/windbnb.png';
 import Layout from '../layouts/Layout.astro';
 import Projects from '../layouts/Projects.astro'
 import ProjectCard from '../components/ProjectCard.astro'
@@ -46,9 +46,8 @@ import AboutContent from '../components/AboutContent.svelte'
   </div>
   <Layout>
     <Projects>
-      <ProjectCard slot='left' id='1' color="600" imgSource={img1.src}/>
-      <ProjectCard slot='right' id="2" color="700" imgSource={img2.src}/>
-      
+      <ProjectCard slot='left' id='1' color="600" imgSource={img1.src} link='https://portfolio-phi-two-32.vercel.app' />
+      <ProjectCard slot='right' id="2" color="700" imgSource={img2.src} link="https://windbnb-diloes.netlify.app"/>
     </Projects>
   </Layout>
 </App>

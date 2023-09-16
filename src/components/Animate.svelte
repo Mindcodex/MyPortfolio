@@ -5,7 +5,7 @@
   gsap.registerPlugin(ScrollTrigger);
   const timeLineScroll = gsap.timeline();
   const timeLine = gsap.timeline();
-
+  const gsapMatchMedia = gsap.matchMedia();
   onMount(() => {
     // scroll animations
 
@@ -14,61 +14,61 @@
     });
     timeLineScroll.from('#elipses', {
       y: 800,
-      opacity:0
+      opacity: 0,
     });
     timeLineScroll.to('#elipses', {
       y: -500,
-      opacity:0,
+      opacity: 0,
     });
     timeLineScroll.from('#aboutme', {
       y: 500,
-      opacity:0
+      opacity: 0,
     });
     timeLineScroll.to('#aboutme', {
       y: -500,
-      opacity:0
+      opacity: 0,
     });
     timeLineScroll.from('#about-1', {
-      scale:0,
-      opacity:0,
-      duration:1
+      scale: 0,
+      opacity: 0,
+      duration: 1,
     });
     timeLineScroll.to('#about-1', {
-      scale:0,
-      opacity:0,
-      delay: 1
+      scale: 0,
+      opacity: 0,
+      delay: 1,
     });
     timeLineScroll.from('#about-2', {
       y: 500,
-      opacity:0
+      opacity: 0,
     });
     timeLineScroll.to('#about-2', {
       y: -500,
-      opacity:0
+      opacity: 0,
     });
     timeLineScroll.from('#about-3', {
       y: 500,
-      opacity:0
+      opacity: 0,
     });
     timeLineScroll.to('#about-3', {
       y: -500,
-      opacity:0
+      opacity: 0,
     });
     timeLineScroll.from('#about-4', {
       y: 500,
-      opacity:0
+      opacity: 0,
     });
     timeLineScroll.to('#about-4', {
       y: -500,
-      opacity:0
+      opacity: 0,
     });
     timeLineScroll.from('#about-5', {
       y: 500,
-      opacity:0
+      opacity: 0,
     });
     timeLineScroll.to('#about-5', {
       y: -500,
-      opacity:0
+      opacity: 0,
     });
 
     timeLineScroll.from('#seccion4', {
@@ -77,10 +77,10 @@
     timeLineScroll.from(
       '#project-card-1',
       {
-        scale:0,
+        scale: 0,
         duration: 3,
-        y:1000,
-        delay:1,
+        y: 1000,
+        delay: 1,
         ease: 'power4.out',
       },
       '-=.5'
@@ -89,29 +89,17 @@
       y: -800,
     });
     timeLineScroll.from('#project-card-2', {
-      y:1000,
+      y: 1000,
       duration: 1,
       ease: 'power4.out',
     });
     timeLineScroll.to('#project-card-2', {
-      y: -500,
-     
+      yPercent: -110,
     });
-    timeLineScroll.from('#project-card-3', {
-      opacity: 0,
-      y: 800,
-    });
-    timeLineScroll.to('#project-card-3', {
-      y: -300,
-      opacity: 0,
-    });
-    timeLineScroll.from('#project-card-4', {
-      opacity: 0,
-      y: 800,
-    });
-    timeLineScroll.to('#project-card-4', {
-      y: -300,
-      opacity: 0,
+    gsapMatchMedia.add('(max-width:640px)', () => {
+      timeLineScroll.to('#project-card-2', {
+        yPercent: -90,
+      });
     });
 
     //static animations
@@ -163,7 +151,7 @@
 </script>
 
 <div class="w-full h-screen flex-col items-center sm:gap-5 flex">
-  <div class="w-full flex flex-col sm:items-end items-center sm:pr-28 ">
+  <div class="w-full flex flex-col sm:items-end items-center sm:pr-28">
     <div class="relative overflow-hidden">
       <div class="absolute w-full h-full bg-black z-10" id="text-cover1" />
       <h2
@@ -173,7 +161,7 @@
         hello
       </h2>
     </div>
-    <div class="relative overflow-hidden ">
+    <div class="relative overflow-hidden">
       <div class="absolute w-full h-full bg-black z-10" id="text-cover2" />
       <h1
         class=" text-neutral-800 sm:text-9xl text-[69.33px] font-[600] font-['Lexend'] 2xl:w-full sm:flex sm:text-right text-center"
@@ -183,11 +171,15 @@
       </h1>
     </div>
   </div>
-  <div class=" w-full justify-between items-center flex flex-col sm:flex-row gap-20">
+  <div
+    class=" w-full justify-between items-center flex flex-col sm:flex-row gap-20"
+  >
     <div
       class="w-full sm:w-[475px] py-[21px] flex-col sm:justify-start sm:items-start justify-center gap-2.5 inline-flex"
     >
-      <h2 class=" 2xl:w-full text-neutral-800 sm:text-7xl text-5xl font-semibold font-['Lexend'] sm:text-left text-center">
+      <h2
+        class=" 2xl:w-full text-neutral-800 sm:text-7xl text-5xl font-semibold font-['Lexend'] sm:text-left text-center"
+      >
         My
       </h2>
       <h2
